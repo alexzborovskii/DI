@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#second-li{
+    color: blue;
+}
+
+#first-div > ul > li{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div + div > p:first-child{
+    background-color: pink;
+    color: white;
+}
+
+div > ol + p{
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+}

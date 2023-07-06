@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#gray{
+    width: 600px;
+    height: 300px;
+    background-color: gray;
+    border: 10px solid lightgray;
+    border-bottom: none;
+    margin: 5px;
+}
+
+#blue{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+#orange{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
