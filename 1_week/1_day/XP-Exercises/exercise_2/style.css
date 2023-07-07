@@ -1,0 +1,165 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    font-family: font-awesome, sans-serif;
+}
+
+/* HEADER */
+
+header{
+    height: 40px;
+    background-color: rgb(248,249,250);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > *{
+    margin: auto 100px;
+}
+
+header > h2{
+    font-size: 20px;
+}
+
+header div{
+    position: relative;
+    height: 30px;
+    color: white;
+    background-color: rgb(0,123,255);
+    width: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background-color: rgb(57, 152, 255);
+        cursor: pointer;
+    }
+
+    &:active{
+        background-color: rgb(137, 194, 255);
+    }
+}
+
+/* ARTICLE */
+
+article{
+    height: calc(100vh - 40px);;
+}
+
+section:first-child{
+    height: 70%;
+    background-image: url(./ocean.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section:first-child > div{
+    width: minmax(200px, 60%);
+}
+
+#action-box{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#action-box *{
+    margin: 5px;
+}
+
+section:first-child h4{
+    font-size: 30px;
+    text-align: center;
+    margin: 40px;
+}
+
+#email-input{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+
+    &::placeholder{
+        padding-left: 10px;
+        font-size: larger;
+    }
+    &:focus::placeholder{
+        padding-left: 0px;
+    }
+    &:focus{
+        padding-left: 10px;
+    }
+}
+
+#sign-up-button{
+    position: relative;
+    height: 40px;
+    color: white;
+    background-color: rgb(0,123,255);
+    width: 120px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background-color: rgb(57, 152, 255);
+        cursor: pointer;
+    }
+
+    &:active{
+        background-color: rgb(137, 194, 255);
+    }
+}
+
+section:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+
+}
+
+.advantage{
+    width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 30px;
+}
+
+.fa-regular, .fa-solid{
+    font-size: 65px;
+    margin: 0 0 20px 0;
+    color: rgb(0,123,255);
+}
+
+.adv-header{
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 7px;
+}
+
+.adv-desc{
+    font-size: smaller;
+    color: gray;
+}
