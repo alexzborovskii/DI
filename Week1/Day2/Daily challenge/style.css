@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    overflow-y: scroll;
+    background-image:  url("./background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* NAV */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    color: white;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+#nav-logo{
+    height: 70px;
+    width: auto;
+    margin: auto 50px;
+}
+
+nav ul{
+        margin: auto 50px;
+}
+
+nav ul li{
+    display: inline;
+    margin: 20px;
+}
+
+nav li > a {
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* ARTICLE */
+article{
+    height: calc(100vh - 80px - 20px);
+}
+
+article > *{
+    background-color: rgba(28, 26, 26, 0.6);
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    left: 100px;
+    color: #fff;
+}
+
+article h1{
+    font-size: 60px;
+    top: 100px;
+}
+
+
+article p[class=main-text]{
+    width: 40%;
+    height: fit-content;
+    font-size: 20px;
+    line-height: 120%;
+    top: 150px;
+    margin-bottom: 50px;
+
+
+}
+#last-p{
+    margin-bottom: 200px;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    color: white;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    z-index: 998;
+}
+
+footer a{
+    color: white;
+}
+
+@media screen and (min-width: 600px) and (max-width:768px) {
+    article h1{
+        font-size: 35px;
+    }
+
+    nav{
+        background-color: yellow;
+        height: fit-content;
+    }
+
+    nav li > a {
+        color: black;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    article h1{
+        font-size: 25px;
+    }
+
+    nav{
+        background-color: lightgreen;
+        height: fit-content;
+    }
+
+    nav li > a {
+        color: black;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+
+    nav{
+        background-color: red;
+    }
+
+    nav li > a {
+        color: white;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width:1200px) {
+
+    nav{
+        background-color: red;
+    }
+
+    nav li > a {
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    nav{
+        background-color: black;
+    }
+
+    nav li > a {
+        color: white;
+    }
+
+    article p[class=main-text]{
+        top: 40px;
+        left: 300px;
+    }
+
+
+}
