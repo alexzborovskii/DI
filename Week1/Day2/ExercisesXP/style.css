@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+
+
+nav a i{
+    float: left;
+    width: 40px;
+    height: auto;
+    margin: auto 10px;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    color: white;
+    margin-left: 50px;
+}
+
+.fa-solid{
+    font-size: 30px;
+}
+
+nav p{
+    float: right;
+    width: fit-content;
+    margin: auto 10px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    margin-right: 50px;
+}
+
+section{
+    height: 70vh;
+}
+
+footer{
+    height: 40px;
+    background-color: black;
+}
+
+footer p{
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}

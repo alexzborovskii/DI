@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Nav */
+
+nav{
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+nav a i{
+    float: left;
+    width: 40px;
+    height: auto;
+    margin: auto 10px;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    color: white;
+    margin-left: 50px;
+}
+
+.fa-solid{
+    font-size: 30px;
+}
+
+nav li{
+    display: inline;
+    height: fit-content;
+
+}
+
+nav ul{
+    float: right;
+    width: fit-content;
+    margin: auto 10px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    margin-right: 50px;
+    list-style: none;
+}
+
+
+
+nav ul li p{
+    float: right;
+    width: fit-content;
+    margin: auto 20px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 50%;
+}
+
+/* Article */
+
+.product{
+    position: relative;
+    margin: 30px 25px;
+    display: inline-block;
+    height: fit-content;
+    width: 200px;
+    background: url("./media/image1.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    border-radius: 5px;
+
+    &:hover{
+        box-shadow: 0 3px 10px gray;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+
+.pr-1{
+    background-image: url("./media/image1.png");
+}
+.pr-2{
+    background-image: url("./media/image2.png");
+}
+.pr-3{
+    background-image: url("./media/image3.png");
+}
+.pr-4{
+    background-image: url("./media/image4.png");
+}
+
+
+
+.label{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 90%;
+    margin: 0;
+}
+
+.label p{
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sale{
+    background-color: rgb(215,41,42);
+    right: 15px;
+    
+}
+
+.new{
+    background-color: rgb(98,184,159);
+    left: 15px;
+}
+
+.product .descr{
+    margin-top: 270px;
+}
+
+.product .descr .name{
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.product .descr .price{
+    text-align: center;
+}
+
+.product .descr .act-price{
+    color: rgb(98,184,159);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.product .descr .old-price{
+    margin-left: 5px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+.product .descr a{
+    text-decoration: none;
+}
+
+
+.product .descr a .add-to-cart{
+    text-align: center;
+    border: 1px solid gray;
+    display: block;
+    width: fit-content;
+    margin: 10px auto 20px auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: gray;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover{
+        background-color: rgb(98,184,159);
+        color: white;
+        border: 0;
+    }
+}
+
+/* Footer */
+
+footer{
+    height: 40px;
+    background-color: black;
+}
+
+footer p{
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Queries */
+
+@media screen and (min-width:600px) and (max-width: 768px) {
+        #product-box{
+            width: 250px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .product{
+            margin: 30px 0;
+        }
+}
+@media screen and (min-width:768px) and (max-width: 992px) {
+        #product-box{
+            width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .product{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-right: calc((100vw - 500px)/4);
+            margin-left: calc((100vw - 500px)/4);
+        }
+}
+@media screen and (min-width:992px) and (max-width: 1200px) {
+        #product-box{
+            width: calc(1000px + ((100vw - 1000px)/6));
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .product{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-right: calc((100vw - 1000px)/6);
+            margin-left: calc((100vw - 1000px)/6);
+        }
+}

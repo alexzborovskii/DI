@@ -1,0 +1,190 @@
+/* main */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --text-color: white;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    /* background:  linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./media/friends2.jpg"); */
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* header */
+/* Nav */
+
+nav{
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+nav a i{
+    float: left;
+    width: 40px;
+    height: auto;
+    margin: auto 10px;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    color: white;
+    margin-left: 50px;
+}
+
+.fa-solid{
+    font-size: 30px;
+}
+
+nav li{
+    display: inline;
+    height: fit-content;
+
+}
+
+nav ul{
+    float: right;
+    width: fit-content;
+    margin: auto 10px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform:translateY(-50%);
+    margin-right: 50px;
+    list-style: none;
+}
+
+
+
+nav ul li p{
+    float: right;
+    width: fit-content;
+    margin: auto 20px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 50%;
+}
+
+/* article */
+#article {
+    width: 100vw;
+    height: calc(100vh - 10vh);
+    color: white;
+}
+
+.sign-in-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(59, 55, 54, 0.8);
+    backdrop-filter: blur(10px);
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+}
+
+.sign-in-header {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(156, 156, 156, 0.1);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+#submit-button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sign-up {
+    display: flex;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+}
+
+#sign-up {
+    display: flex;
+    position: relative;
+    left: 18px;
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid var(--text-color);
+    font-weight: bold;
+    margin: 0 1vw;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Footer */
+
+footer{
+    height: 40px;
+    background-color: black;
+}
+
+footer p{
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
