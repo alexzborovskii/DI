@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article{
+    width: 100%;
+}
+
+/* Welcome */
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 40px;
+    position: relative;
+    margin: auto;
+    background-image: linear-gradient(to bottom right, black 0%, purple 50%, purple 95%);
+    color: white;
+    text-align: center;
+}
+
+.fa-solid.fa-user-plus{
+    font-size: 80px;
+    margin: 40px;
+}
+
+.box h1{
+    font-size: 30px;
+    margin: 10px;
+}
+
+.box p{
+    width: 80%;
+}
+
+.box a{
+    width: fit-content;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.fa-solid.fa-circle-arrow-right{
+    margin: 2px;
+}
+
+
+
+
+/* login */
+
+.box .login{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 40px;
+    position: relative;
+    margin: auto;
+    background-image: linear-gradient(to bottom right, black 0%, purple 50%, purple 95%);
+    color: white;
+    text-align: center;
+}
+
+#welcome-box h1{
+    font-size: 30px;
+    margin: 10px;
+}
+
+form{
+    margin: 50px 0;
+}
+
+
+/* Footer */
+
+footer{
+    position: absolute;
+    bottom: 0;
+}

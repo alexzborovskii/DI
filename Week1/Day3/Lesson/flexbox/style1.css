@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.box{
+    background-color: aquamarine;
+    /* height: 200px; */
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#id1 {
+    justify-content: start;
+    flex: 1;
+}
+
+#id2 {
+    flex: 3;
+    
+}
+
+#id3 {
+    justify-content: flex-end;
+    flex: 1;
+
+}
