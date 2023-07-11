@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#section1{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+.container{
+    display: flex;
+}
+
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#id1, #id3{
+    width: 10%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#id1{
+
+}
+
+#id2{
+    width:80% ;
+    align-self: center;
+    justify-self: center;
+    justify-content: space-around;
+    margin: 0 100px;
+}
+
+#id3{
+    justify-self: flex-end;
+    align-items: flex-end;
+}
