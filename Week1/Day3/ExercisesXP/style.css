@@ -2,24 +2,113 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 1.1rem;
 }
 
-html{
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 header{
     height: 100px;
+    width: 90%;
+    margin: 0 auto;
     background-color: rgb(51,51,51);
     color: white;
 }
 
+#header-box{
+    padding: 10px 0 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
 header h1{
-    padding: 10px;
-    font-size: large;
+    font-size: 35px;
+
 }
 
 header p{
-    padding: 10px;
+    font-size: 15px;
+}
 
+/* Article */
+
+article{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#right_bar{
+    margin: 0 20px;
+    justify-self: flex-end;
+    min-width: 400px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#main_section{
+
+}
+
+article section{
+    margin: 10px;
+}
+
+section h2{
+    font-size: 25px;
+    border-bottom: 2px solid gray;
+}
+
+.job-description-box{
+    display: flex;
+}
+
+.job-description-box .date{
+    width: 100px;
+    margin: 5px;
+}
+
+.job-description-box h3{
+    margin: 5px;
+}
+
+.job-description{
+    display: flex;
+    flex-direction: column;
+}
+.responsibilities{
+    margin: 10px;
+}
+
+.responsibilities li{
+    /* list-style: none; */
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 1200px){
+    article, header{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    article {
+        flex-direction: column;
+    }
+    #right_bar{
+        width: 100%;
+        flex-direction: row;
+        font-size: 1.1rem;
+    }
+    section h2{
+        font-size: 18px;
+    }
+    #right_bar p, #right_bar i {
+        font-size: 0.7rem;
+    }
 }
