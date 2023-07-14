@@ -18,7 +18,7 @@ html{
     background-image: url("./media/night-sky.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    height: calc(100vh);
+    height: 100vh;
     width: 100vw;
     color: blanchedalmond;
 
@@ -42,7 +42,8 @@ html{
     background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
     width: 100vw;
     color: blanchedalmond;
 }
@@ -105,7 +106,8 @@ html{
 #work{
     background-color: #0cbaba;
     background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-    height: fit-content;
+    min-height: 100vh;
+    max-height: fit-content;
     width: 100vw;
     color: blanchedalmond;
 }
@@ -138,13 +140,14 @@ html{
 
 #right-work{
     margin-top: calc(56px + 3vh);
-    margin-right: 10vw;
+    margin-right: auto;
+    margin-left: auto;
     width: 40%;
     min-width: 300px
 }
 
 #right-work img{
-    width: 100%;
+    width: 80%;
 
 }
 
@@ -171,6 +174,24 @@ html{
     width: 100vw;
     color: blanchedalmond;
 }
+
+
+
+            /* Expirience */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
