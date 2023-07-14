@@ -9,6 +9,7 @@ html{
     overflow-x: hidden;
 }
 
+
 #home{
     display: flex;
     flex-direction: column;
@@ -112,6 +113,7 @@ html{
 #work-box{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: top;
     justify-content: center;
     margin-bottom: 10vh;
@@ -129,11 +131,16 @@ html{
     font-size: 5rem;
 }
 
+#left-work p{
+    font-size: 1.5rem;
+}
+
+
 #right-work{
     margin-top: calc(56px + 3vh);
-
     margin-right: 10vw;
-    width: 40%
+    width: 40%;
+    min-width: 300px
 }
 
 #right-work img{
@@ -163,4 +170,61 @@ html{
     height: calc(100vh - 56px);
     width: 100vw;
     color: blanchedalmond;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 8px;
+    }
+
+
+}
+
+
+/* Small devices, 768px and down */
+
+@media only screen and (max-width: 768px) {
+    #right-work, #left-work{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    #left-work{
+        width: 800%;
+    }
+
+    #right-work{
+        width: 70%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    html{
+        font-size: 10px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    html{
+        font-size: 12px;
+    }
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    html{
+        font-size: 14px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    html{
+        font-size: 16px;
+    }
 }
