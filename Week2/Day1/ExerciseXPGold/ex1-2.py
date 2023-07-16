@@ -13,4 +13,4 @@ elif id_mod <= 8:
 else:
     print("Autumn")
     
-# other solution could be  without id_mod und with winter in "else" to avoid hardcode "12, 1, 2"
+    # other solution could be  without id_mod und with winter in "else" to avoid hardcode "12, 1, 2"
