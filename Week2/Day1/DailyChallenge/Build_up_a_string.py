@@ -3,7 +3,7 @@ input_string = input("Type in the string: ")
 string_length = len(input_string)
 if string_length < 10:
     print("string not long enough")
-if string_length> 10:
+elif string_length> 10:
     print("string too long")
 else:
     print("perfect string")
