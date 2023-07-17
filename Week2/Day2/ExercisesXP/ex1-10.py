@@ -107,17 +107,28 @@
 #         restric_list.append(name)
 # for unlucky in restric_list:
 #     teen_names.remove(unlucky)
-# print(teen_names)
+
+
     
 # Exercise 10
 # sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", 
 #                    "Avocado sandwich", "Pastrami sandwich", 
 #                    "Egg sandwich", "Chicken sandwich", 
 #                    "Pastrami sandwich"]
+# sand_counter = 0
+# orders_len = len(sandwich_orders)
 
-# for sandwich in sandwich_orders:
-#     if "Pastrami" in sandwich:
-#         sandwich_orders.remove(sandwich)
+# while True:
+#     if "Pastrami" in sandwich_orders[sand_counter]:
+#         sandwich_orders.remove(sandwich_orders[sand_counter])
+#         sand_counter -= 1
+#         orders_len -= 1
+#     sand_counter += 1
+#     if sand_counter == orders_len:
+#         break
+# # for sandwich in sandwich_orders:
+# #     if "Pastrami" in sandwich:
+# #         sandwich_orders.remove(sandwich)
 # finished_sandwich = []
 # for rem_sandwich in sandwich_orders:
 #     finished_sandwich.append(rem_sandwich)
