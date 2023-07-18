@@ -78,12 +78,16 @@
 
 # Exercise 8
 # toppings = []
+# price = 10
 # while True:
 #     topping = input("Give me the topping ('quit' to stop) ")
 #     if topping == "quit":
 #         break
 #     else:
 #         toppings.append(topping)
+#         price += 2.5
+# print(toppings, price)
+
     
 # # Exercise 9
 # # 1-2-3
