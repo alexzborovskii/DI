@@ -1,7 +1,6 @@
 import random
 
 wordslist = ['correction', 'childish', 'beach', 'python', 'assertive', 'interference', 'complete', 'share', 'credit card', 'rush', 'south']
-
 incorrect_turns = 0
 guessed_letters = set()
 pics = ['''
@@ -44,6 +43,7 @@ pics = ['''
 def game():
     global incorrect_turns
     global asteriscs_left
+    
     word = random.choice(wordslist) 
     length = len(word)
     asteriscs_left = length
