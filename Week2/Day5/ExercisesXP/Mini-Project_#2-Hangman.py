@@ -53,30 +53,31 @@ def game():
     print(f'The word is : {current_word}')
     
     while True :
-        # guess
+    # guess
         letter = input("input the letter: ")
-                # counting failed guesses
+        # counting failed guesses
         if letter not in word:
             print(pics[incorrect_turns])             
             incorrect_turns += 1
+        # showing guessed letters
         else:
-                # showing guessed letters
             if letter not in guessed_letters :
                 for i in range(length):
                     if word[i] == letter :
                         current_word_list[i] = letter
                         asteriscs_left -= 1
-                        print(asteriscs_left)
                 guessed_letters.add(letter)
             current_word = "".join(current_word_list)
         print(current_word)
         # fail
         if incorrect_turns == len(pics) :
             print(f"You fail. The word was '{word}'.")
+            input()
             break
         #  win
         if asteriscs_left == 0 :
             print(f"You won! The word is '{word}'.")
+            input()
             break
-            
+        
 game()
