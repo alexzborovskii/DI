@@ -111,6 +111,7 @@
 #         restric_list.append(name)
 # for unlucky in restric_list:
 #     teen_names.remove(unlucky)
+# print(teen_names)
 
 
     

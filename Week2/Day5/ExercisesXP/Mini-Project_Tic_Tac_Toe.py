@@ -67,11 +67,11 @@ def check_win() -> bool:
         print(f"Player {player} won!")
         return True   
     # diag check
-    on_diag = field[real_turn[0]] == field[real_turn[1]]
+    on_diag = field[real_turn[0] % 2] == field[real_turn[1] % 2]
     if on_diag:
-        left_top_diag_win = field[real_turn[0]][real_turn[1]] == field[(real_turn[0] + 1) % 3][(real_turn[1] + 1) % 3] == field[(real_turn[0] + 2) % 3][(real_turn[1] + 2) % 3] 
-        left_bot_diag_win = field[real_turn[0]][real_turn[1]] == field[(real_turn[0] + 1) % 3][(real_turn[1] - 1) % 3] == field[(real_turn[0] + 2) % 3][(real_turn[1] - 2) % 3]
-        if left_bot_diag_win or left_top_diag_win:
+        reverse_diag_win = field[real_turn[0]][real_turn[1]] == field[(real_turn[0] + 1) % 3][(real_turn[1] + 1) % 3] == field[(real_turn[0] + 2) % 3][(real_turn[1] + 2) % 3] 
+        forward_diag_win = field[real_turn[0]][real_turn[1]] == field[(real_turn[0] + 1) % 3][(real_turn[1] - 1) % 3] == field[(real_turn[0] + 2) % 3][(real_turn[1] - 2) % 3]
+        if forward_diag_win or reverse_diag_win:
             print(f"Player {player} won!")
             return True
     # filled
