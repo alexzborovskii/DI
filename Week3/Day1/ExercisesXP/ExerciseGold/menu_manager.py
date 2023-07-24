@@ -53,4 +53,3 @@ mc_donalds.update_item("Salad", 28, "B", True)
 mc_donalds.update_item("French", 10, "C", False)
 mc_donalds.remove_item("Soup")
 mc_donalds.remove_item("Ham")
-
