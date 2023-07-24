@@ -21,18 +21,20 @@ class Dog():
         else:
             return 'tie'
         
-# dog1 = Dog('Doggy1', 1, 10)
-# dog2 = Dog('Doggy2', 2, 20)
-# dog3 = Dog('Doggy3', 1, 10)
+        
+if __name__ == '__main__':
+    dog1 = Dog('Doggy1', 1, 10)
+    dog2 = Dog('Doggy2', 2, 20)
+    dog3 = Dog('Doggy3', 1, 10)
 
-# print(dog1.bark())
-# print(dog2.bark())
-# print(dog3.bark())
+    print(dog1.bark())
+    print(dog2.bark())
+    print(dog3.bark())
 
-# print(dog1.run_speed())
-# print(dog2.run_speed())
-# print(dog3.run_speed())
+    print(dog1.run_speed())
+    print(dog2.run_speed())
+    print(dog3.run_speed())
 
-# print(dog1.fight(dog2))
-# print(dog2.fight(dog3))
-# print(dog3.fight(dog1))
+    print(dog1.fight(dog2))
+    print(dog2.fight(dog3))
+    print(dog3.fight(dog1))

@@ -28,10 +28,11 @@ class Chartreux(Cat):
 class Siames(Cat):
     pass
 
-beny = Bengal('Beny', 1)
-chary = Chartreux('Chary', 2)
-sia = Siames('Sia', 3)
+if __name__ == '__main__':
+    beny = Bengal('Beny', 1)
+    chary = Chartreux('Chary', 2)
+    sia = Siames('Sia', 3)
 
-all_cats = [beny, chary, sia]
-Sarahs_pets = Pets(all_cats)
-Sarahs_pets.walk()
+    all_cats = [beny, chary, sia]
+    Sarahs_pets = Pets(all_cats)
+    Sarahs_pets.walk()

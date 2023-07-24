@@ -28,13 +28,14 @@ class PetDog(Dog):
             print(f'{self.name} is not trained')
 
 
-# petd1 = PetDog('Petd1', 1, 10)
-# petd2 = PetDog('Petd2', 1, 10, True)
-# petd3 = PetDog('Petd2', 2, 20,)
+if __name__ == '__main__':
+    petd1 = PetDog('Petd1', 1, 10)
+    petd2 = PetDog('Petd2', 1, 10, True)
+    petd3 = PetDog('Petd2', 2, 20,)
 
-# petd1.train()
-# petd1.play(petd2)
+    petd1.train()
+    petd1.play(petd2)
 
-# petd1.do_a_trick()
-# petd2.do_a_trick()
-# petd3.do_a_trick()
+    petd1.do_a_trick()
+    petd2.do_a_trick()
+    petd3.do_a_trick()
