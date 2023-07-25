@@ -13,7 +13,7 @@ class Dog():
     def power(self):
         return self.run_speed() * self.weight
     
-    def fight(self, other_dog):
+    def fight(self, other_dog: 'Dog') -> str:
         if self.power() > other_dog.power():
             return self.name + ' won'
         elif self.power() < other_dog.power():
