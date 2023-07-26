@@ -1,12 +1,12 @@
 # # Exercise 1 : Basic Classes
 class Employee():
-    def __init__(self, firstname, lastname, age, job, salary, adress) -> None:
+    def __init__(self, firstname, lastname, age, job, salary, address) -> None:
         self.firstname = firstname
         self.lastname = lastname
         self.age = age
         self.job = job
         self.salary = salary
-        self._adress = adress
+        self.__address = address
         
     def __gt__(self, other_employee):
         return self if self.salary > other_employee.salary else other_employee
@@ -30,24 +30,59 @@ class Employee():
     def show_info(self):
         print(self)
         
-    # @classmethod
-    # def create_best_employee(cls,  firstname, lastname, age, job, salary, adress):
-    #     if salary 
+       ##################
+       ####Exercise 1####
+       ##################
+        
+    @property
+    def address(self):
+        return self.__address
+    
+    @address.setter
+    def address(self, new_addres):
+        if self.age > 30:
+            self.__address = new_addres
+        else:
+            raise Exception('Too young')
+    
+    @classmethod    
+    def create_best_employee(cls, firstname, lastname, age, job, salary, address):
+        if salary > 30000:
+            return cls(firstname, lastname, age, job, salary, address)
+        
+    
+       ##################
+       ####Exercise 2####
+       ##################
+       
+class Manager(Employee):
+    def __init__(self, firstname, lastname, age,  address, job = "manager", salary = 45000) -> None:
+        super().__init__(firstname, lastname, age, job, salary, address)
+        __employees = []
+    
+    # @employees.setter    
+    # def add_new_employee(self, new_employee):
+    #     self.employees.append(new_employee)
+        
+    # show_employees(self) 
         
 
-emp1 = Employee('Lea', 'Smith', 30, 'developer', 10000, 'TA')
-emp2 = Employee('David', 'Schartz', 20, 'teacher', 20000, 'Haifa')
+brad = Manager('Brad', 'Pitt', 50, 'Tel Aviv')
+       
 
-emp1.get_fullname()
-emp1.happy_birthday()
-emp1.get_promotion(5000)
-emp1.show_info()
-emp2.get_fullname()
-emp2.happy_birthday()
-emp2.get_promotion(5000)
-print(emp1 > emp2)
-print(emp1 + emp2)
-emp2.show_info()
+# emp1 = Employee('Lea', 'Smith', 30, 'developer', 10000, 'TA')
+# emp2 = Employee('David', 'Schartz', 20, 'teacher', 20000, 'Haifa')
+
+# emp1.get_fullname()
+# emp1.happy_birthday()
+# emp1.get_promotion(5000)
+# emp1.show_info()
+# emp2.get_fullname()
+# emp2.happy_birthday()
+# emp2.get_promotion(5000)
+# print(emp1 > emp2)
+# print(emp1 + emp2)
+# emp2.show_info()
 
 
 # # Exercise 2 : Inheritance
