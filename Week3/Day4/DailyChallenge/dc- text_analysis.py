@@ -30,7 +30,7 @@ class Text:
     
     # slower way
     # 
-    @performance
+    # @performance
     def most_common1(self):
         most_common_word = ''
         most_common_counter = 0
@@ -41,13 +41,15 @@ class Text:
         return most_common_word
     
     # faster way
-    @performance
+    # 
+    # @performance
     def most_common2(self):
         most_common_word = max(self.words, key=self.words.get)
         return most_common_word
             
     # slower way
-    @performance
+    # 
+    # @performance
     def uniqe_words1(self):
         uniqe_list = []
         for word in self.word_list:
@@ -55,7 +57,9 @@ class Text:
                 uniqe_list.append(word)
         return uniqe_list
     
-    # faster way   
+    # faster way 
+    # 
+    # @performance  
     def uniqe_words2(self):
         uniqe_list = [k for k, v in self.words.items() if v == 1]
         return uniqe_list
@@ -65,7 +69,7 @@ class Text:
     @classmethod      
     def from_file(cls, file_name: str):
         file_str = ''
-        with open('the_stranger.txt', 'r') as file:
+        with open(file_name, 'r') as file:
             file_list = file.readlines()
         file_list_clean = [x.strip() for x in file_list]
         file_str +=" ".join(file_list_clean)
@@ -74,14 +78,22 @@ class Text:
             
             
 if __name__ == '__main__':
+    # ex1 tests
+    ###########
     # my_string = 'A good book would sometimes cost as much as a good house.'
     # text = Text(my_string)
     # print(text.freq('good'))
     # print(text.most_common())
+    
+    # ex2 tests
+    ###########
     file_text = Text.from_file('the_stranger.txt')
     print(file_text.freq('good'))
-    print(file_text.most_common1())
-    print(file_text.most_common2())
-    print(file_text.uniqe_words1())
-    print(file_text.uniqe_words2())
+    
+    file_text.most_common1()
+    file_text.most_common2()
+    file_text.uniqe_words1()
+    file_text.uniqe_words2()
+    print(file_text.most_common1() == file_text.most_common2())
+    print(file_text.uniqe_words1() == file_text.uniqe_words2())
     
