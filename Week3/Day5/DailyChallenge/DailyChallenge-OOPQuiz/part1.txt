@@ -1,0 +1,16 @@
+What is a class?
+- Blueprint of the object
+What is an instance?
+- Real object, created from the blueprint
+What is encapsulation?
+- Opportunity to bundle data and methods inside one entity.
+What is abstraction?
+- It`s concept of hiding unnecessery details from the user
+What is inheritance?
+- Ability to pass parent(s) properties to children, adding new characteristics to the children or edit childrens characteristic of the parent(s)
+What is multiple inheritance?
+- Opportunity to inherit from more then 1 parent.
+What is polymorphism?
+- Concept of using diiferent data types with the same methods.
+What is method resolution order or MRO?
+- It`s the order in which class inherits their characteristics from the multiple parents
