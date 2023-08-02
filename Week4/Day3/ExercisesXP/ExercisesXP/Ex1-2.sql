@@ -66,6 +66,14 @@
 -- order by film.rental_rate desc
 -- limit 30
 
+-- -- OR
+-- select title, replacement_cost
+-- from film
+-- inner join inventory on film.film_id = inventory.film_id
+-- inner join rental on rental.inventory_id = inventory.inventory_id
+-- order by replacement_cost desc
+
+
 -- -- 6
 -- 1
 -- select film.film_id, film.title, film.fulltext 
@@ -73,7 +81,10 @@
 -- inner join film on film.film_id = film_actor.film_id
 -- where actor_id = 
 -- 	  (select actor_id from actor where (first_name = 'Penelope' and last_name = 'Monroe'))
--- 	   and film.description ilike '%sumo%'
+-- 	   and
+-- 	   film.description ilike '%sumo%'
+-- 	   -- -- or
+-- -- 	   fulltext  @@ tsquery ('sumo')
 
 -- 2
 -- select film.title from film
@@ -82,7 +93,8 @@
 -- where length < 60 and rating = 'R' and category.name = 'Documentary'
 
 -- 3
--- select film.title, payment.amount, customer.first_name, customer.last_name from film
+-- select film.title, payment.amount, customer.first_name, customer.last_name 
+-- from film
 -- join inventory on film.film_id = inventory.film_id
 -- join rental on inventory.inventory_id = rental.inventory_id
 -- join payment on rental.rental_id = payment.rental_id
@@ -98,8 +110,22 @@
 -- join rental on inventory.inventory_id = rental.inventory_id
 -- join payment on rental.rental_id = payment.rental_id
 -- join customer on customer.customer_id = payment.customer_id
--- where film.title ilike '%boat%' or film.description ilike '%boat%' and  
--- customer.first_name = 'Matthew' and 
--- customer.last_name = 'Mahan'
+-- where (film.title ilike '%boat%' or film.description ilike '%boat%') and  
+-- (customer.first_name = 'Matthew' and 
+-- customer.last_name = 'Mahan')
 -- order by film.replacement_cost desc
 -- limit 1;
+
+-- -- OR
+
+-- SELECT film.title, film.replacement_cost, customer.first_name, customer.last_name, title, description
+-- FROM film
+-- INNER JOIN inventory ON film.film_id = inventory.film_id
+-- INNER JOIN rental ON inventory.inventory_id = rental.inventory_id
+-- INNER JOIN customer ON customer.customer_id = rental.customer_id
+-- WHERE 
+-- customer.first_name = 'Matthew' 
+-- AND
+-- customer.last_name = 'Mahan'
+-- AND (title ILIKE '%boat%' OR description ILIKE '%boat%')
+-- ORDER BY film.replacement_cost DESC
