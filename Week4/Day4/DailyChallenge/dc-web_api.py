@@ -17,30 +17,42 @@ def country_insert(countries):
             with connection.cursor() as cursor: 
                 
                 for country in countries:
-                    name = country.get("name", {"common"})
-                    capital = country.get("capital", "")
-                    flag = country.get("flags", {}).get("png", "")
-                    subregion = country.get("subregion", "")
-                    population = country.get("population", 0)
+                    name = country['name']['common']
+                    capital = country['capital'][0]
+                    flag = country['flag']
+                    subregion = country['subregion']
+                    population = country['population']
 
-                    name_query = f"""
-                                insert into country (country_name) values ('{name}')
-                                """
-                    capital_query = f"""
+                    name_query = f'''
+                                insert into country (country_name) values ("{name}")
+                                '''
+                    capital_query = f'''
                                     INSERT INTO capital (capital_name, country_id) values 
-                                    ('{capital}', select country_id from country where country_name = '{name}')
-                                    """
+                                    ("{capital}", (select country_id from country where country_name = "{name}"))
+                                    '''
                     add_info_query = f"""
                                     INSERT INTO additional_info (country_id, flag, subregion, population) values 
-                                    (select country_id from country where country_name = '{name}', '{flag}', '{subregion}', '{population}')
+                                    ((select country_id from country where country_name = '{name}'), '{flag}', '{subregion}', '{population}')
                                     """
 
-                    cursor.execute(name_query)
-                    cursor.execute(capital_query)
-                    cursor.execute(add_info_query)
-                    
-
+                                      
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(name_query)
                 connection.commit()
+        
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(capital_query)
+                connection.commit()
+                
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(add_info_query)
+                connection.commit()
+                    
+            
+                         
 
     except Exception as e :
         print(e)
@@ -60,9 +72,11 @@ def get_random_countries():
         else:
             countries_data = response.json()
             random_countries = random.sample(countries_data, 10)
+            print(random_countries)
+            
             return(random_countries)
     except Exception as err:
         print(err)
     
-
+# print(get_random_countries())
 country_insert(get_random_countries())
