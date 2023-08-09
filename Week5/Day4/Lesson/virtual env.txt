@@ -1,0 +1,11 @@
+1. python -m venv <name> #create
+
+2. venv/Scripts/activate
+2. venv/Scripts/activate.bat
+2. venv/Scripts/activate.ps1
+
+3. pip freeze requirements.txt
+
+4. create .gitignore and add venv folder
+
+5. deactivate virtual envirenment
