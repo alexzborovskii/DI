@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from polls.views import index, post, about
+from polls.views import index, post, about, all_posts
 
 
 
@@ -26,5 +26,6 @@ urlpatterns = [
     path('index/', index, name='index'),
     path('post/<int:post_id>/', post, name='post'),
     path('about_website/', about, name='about'),
+    path('author-posts/<str:author_name>/', all_posts, name='author_posts'),
     
 ]
