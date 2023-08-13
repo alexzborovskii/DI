@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Author, Post
+from .models import Author, Post, Category
 
 
 # Create your views here.
@@ -9,14 +9,12 @@ def index(request):
     return HttpResponse(message)
 
 def post(request, post_id:int):
-    data= {
-        1: "This is the 1st post",
-            
-        2: "This is the 2st post"
-        
-    }
-    post = data.get(post_id, "No such post")
-    return HttpResponse(post)
+    try:
+        post = Post.objects.get(id = post_id)
+        content = f"AUTHOR: {post.author.name} | TITLE: {post.title} | Text: {post.text}"
+        return HttpResponse(content)
+    except Post.DoesNotExist:
+        return HttpResponse("No such post")
 
 def about(request):
     message = """<h1>This is about page
@@ -26,14 +24,29 @@ def about(request):
 #create a view where we get all of the post of a certain author
 
 def all_posts(request, author_name:str):
-    # all_posts_list = Post.objects.all()
-    author_name = author_name.lower()
+    author_name = author_name.capitalize()
     try:
         author = Author.objects.get(name=author_name)
         author_posts = author.post_set.all()
+        
         content = ""
+
         for post in author_posts:
-            content += post.title() + '\n'
-            return HttpResponse(content)
+            content += post.title + '\n'
+
+        return HttpResponse(content)
+    
     except Author.DoesNotExist:
-        return HttpResponse('No such author')
+        return HttpResponse("No such author")
+
+
+def category_posts(request, category_id:int):
+    try:
+        category = Category.objects.get(id=category_id)
+        posts = category.posts.all()
+        content = ""
+        for post in posts:
+            content += f'{post.title} - {post.author.name}</br>'
+        return HttpResponse(content)
+    except Category.DoesNotExist:
+        return HttpResponse("No such category")

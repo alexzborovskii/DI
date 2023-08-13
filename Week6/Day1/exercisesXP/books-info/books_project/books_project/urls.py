@@ -1,5 +1,5 @@
 """
-URL configuration for mysite project.
+URL configuration for books_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,18 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from polls.views import index, post, about, all_posts, category_posts
-
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index, name='index'),
-    path('post/<int:post_id>/', post, name='post'),
-    path('about_website/', about, name='about'),
-    path('author-posts/<str:author_name>/', all_posts, name='author_posts'),
-    path('category-posts/<int:category_id>/', category_posts, name='category_posts'),
-    
-    
 ]

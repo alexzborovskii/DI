@@ -1,9 +1,9 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
+
 
 # Create your models here.
-
-
-
 
 class Post(models.Model):
     # author = models.CharField(max_length=50)
@@ -11,12 +11,50 @@ class Post(models.Model):
     text = models.TextField()
     time_created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('Author', on_delete=models.CASCADE, null=True)
+    #category_set/categories
     
     
-# author
 class Author(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50) #by def null not allowed
     email = models.EmailField(blank=True, null=True) # dont have to provide value for the field
+    # post_set
+    # profile
+    
+class Profile(models.Model):
+    author = models.OneToOneField('Author', on_delete=models.CASCADE)
+    image_url = models.URLField(blank=True, null=True)
+    
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    posts = models.ManyToManyField('Post', related_name='categories')
+    
+    # conspiracy
+    def clean_name(self):
+        print('cleaning name')
+        if 'conspiracy' in self.name:
+            raise ValidationError(f'Cant have conspiracy in category name')
+        return self.name
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 ### SHELL COMMANDS
