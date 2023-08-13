@@ -15,3 +15,4 @@ def create_user_author(sender, instance, created, **kwargs):
     
     if created: # if the user was created
         Author.objects.create(user=instance, name=instance.username)
+    

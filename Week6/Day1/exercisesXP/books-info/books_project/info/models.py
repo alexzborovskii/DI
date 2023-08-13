@@ -9,7 +9,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator, MinLeng
 class Book(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False)
     author = models.CharField(max_length=50, blank=False, null=False)
-    published_date = models.DateField(auto_now_add=False, blank=False, null=True)
+    published_date = models.DateField(auto_now_add=False, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
     page_count = models.PositiveIntegerField()
     categories = models.CharField(max_length=50)

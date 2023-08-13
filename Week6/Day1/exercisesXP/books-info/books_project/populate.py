@@ -5,7 +5,6 @@ django.setup()
 
 from datetime import datetime
 from info.models import Book
-
 import requests
 
 response = requests.get('https://www.googleapis.com/books/v1/volumes?q=python')
