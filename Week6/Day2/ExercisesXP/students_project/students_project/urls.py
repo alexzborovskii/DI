@@ -24,7 +24,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls') ),
     path('api/students/', student_list, name='students'),
     path('api/student_detail/<int:student_pk>', student_detail, name='student_detail'),
-    
-    # path('api/posts/', PostView.as_view(), name='posts'), #asview makes clas a view, not a class
-    # path('api/posts/<int:pk>', PostView.as_view(), name='posts')
 ]
