@@ -6,17 +6,23 @@ from rest_framework.parsers import JSONParser
 from .models import Student
 from .serializers import StudentSerializer
 
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-
-# from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
-# Create your views here.
-
 
 @csrf_exempt
 def student_list(request):
+    
+    ### ExerciseXP func###
+    # if request.method == 'GET':
+    #     students = Student.objects.all() 
+    #     serializer = StudentSerializer(students, many=True) 
+    #     return JsonResponse(serializer.data, safe=False)
+    
+    ### DailyChallenge func###
     if request.method == 'GET':
-        students = Student.objects.all() 
+        date_joined_param = request.GET.get('date_joined')
+        if date_joined_param:
+            students = Student.objects.filter(date_joined=date_joined_param)
+        else:
+            students = Student.objects.all() 
         serializer = StudentSerializer(students, many=True) 
         return JsonResponse(serializer.data, safe=False)
     
@@ -51,4 +57,3 @@ def student_detail(request, student_pk):
     if request.method == 'DELETE':
         student.delete()
         return HttpResponse(status=204) # Successfully deleted
-
