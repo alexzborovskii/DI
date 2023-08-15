@@ -10,9 +10,12 @@ from rest_framework.views import APIView
 
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 
+from .permissions import IsAuthenticatedAndAdmin
+
+
 class PostView(APIView):
     
-    permission_classes = {IsAuthenticated,}
+    permission_classes = {IsAuthenticatedAndAdmin, }
     
     
     def get(self, request, *args, **kwargs):
@@ -41,11 +44,6 @@ class PostView(APIView):
         post = Post.objects.get(id=pk)
         post.delete()
         return Response({'message': f"Post id = {pk} DELETED"})
-
-
-
-
-
 
 
 

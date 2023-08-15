@@ -7,4 +7,4 @@ class ReportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Report
-        fields = ('location', 'temperature', 'created_at', 'type')
+        fields = ('forecaster', 'location', 'temperature', 'created_at', 'type')

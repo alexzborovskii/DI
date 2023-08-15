@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls') ),
     path('api/reports/', ReportView.as_view(), name='reports') #asview makes clas a view, not a class
-    
 ]

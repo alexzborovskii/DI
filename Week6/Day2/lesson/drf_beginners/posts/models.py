@@ -1,15 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
+CATEGORIES = [
+        ('sci', 'scientific'),
+        ('na', 'nature')]
+
+
 class Post(models.Model):
     
-    CATEGORIES = [
-        ('sci', 'scientific'),
-        ('na', 'nature'),
-        
-    ]
-    
-    
+    # author -> User
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
     title = models.CharField(max_length=50)
     text = models.TextField(blank=True, default="")
     created_at = models.DateField(auto_now_add=True)
