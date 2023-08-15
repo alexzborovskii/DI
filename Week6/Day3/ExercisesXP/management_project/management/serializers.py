@@ -8,6 +8,12 @@ class DepartmentSerializer(serializers.ModelSerializer):
         model = Department
         fields = ('name', 'description')
 
+# class DepartmentSerializer2(serializers.HyperlinkedModelSerializer ):
+#     url = serializers.HyperlinkedIdentityField(view_name='department-detail')
+    
+#     class Meta:
+#         model = Department
+#         fields = ('url', 'name', 'description')
 
 class EmployeeSerializer(serializers.ModelSerializer):
 

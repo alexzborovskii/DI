@@ -2,15 +2,24 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .serializers import DepartmentSerializer, EmployeeSerializer, TaskSerializer, ProjectSerializer
+from .serializers import DepartmentSerializer, EmployeeSerializer, TaskSerializer, ProjectSerializer #DepartmentSerializer2
 from .models import Department, Employee, Project, Task
+from .permissions import IsDepartmentAdmin
+
+
+from rest_framework.permissions import IsAuthenticated 
 
 
 class DepartmentAPIView(APIView):
+    
+    # permission_classes = {IsAuthenticated, }
+    permission_classes = {IsDepartmentAdmin,}
 
     def get(self, request, *args, **kwargs):
+        # serializer_context = {'request': request,}
         departments = Department.objects.all()
         serializer = DepartmentSerializer(departments, many=True)
+        # serializer = DepartmentSerializer2(departments, context=serializer_context, many=True)
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
@@ -37,6 +46,9 @@ class DepartmentAPIView(APIView):
 
 
 class EmployeeAPIView(APIView):
+
+    permission_classes = [IsDepartmentAdmin, ]
+
 
     def get(self, request, *args, **kwargs):
         employees = Employee.objects.all()
@@ -68,6 +80,9 @@ class EmployeeAPIView(APIView):
 
 class TaskAPIView(APIView):
 
+    permission_classes = [IsDepartmentAdmin, ]
+
+
     def get(self, request, *args, **kwargs):
         tasks = Task.objects.all()
         serializer = TaskSerializer(tasks, many=True)
@@ -96,6 +111,9 @@ class TaskAPIView(APIView):
 
 
 class ProjectAPIView(APIView):
+    
+    permission_classes = [IsDepartmentAdmin, ]
+    
 
     def get(self, request, *args, **kwargs):
         projects = Project.objects.all()
