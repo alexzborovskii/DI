@@ -170,4 +170,17 @@
 # # 2
 # import pandas as pd
 # df = pd.DataFrame({'A': [1, 'apple', 3, 4, 'banana'], 'B': [5, 6, 7, 8, 9]})
-# print(df["A"].pd.to_numeric())
+# df['A'] = pd.to_numeric(df["A"], errors = "coerce")
+# mean = df['A'].mean(skipna=True)
+# df["A"] = df["A"].fillna(mean)
+# print(df["A"])
+
+# # 3
+# import matplotlib.pyplot as plt
+
+# figure, axes = plt.subplots()
+# axes.set(title='A and B', xlabel='x', ylabel='y') #xlim=(0, 20), ylim=(0, 400)
+# axes.plot(df['A'])
+# axes.plot(df['B'])
+# plt.show()
+
