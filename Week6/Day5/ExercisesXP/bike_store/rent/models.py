@@ -19,28 +19,30 @@ class Vehicle(models.Model):
     real_cost = models.DecimalField(max_digits=10, decimal_places=2)
     size = models.ForeignKey('VehicleSize', on_delete=models.CASCADE)
     
+    
+    
     def __str__(self):
-        return f"{self.vehicle_type}, {self.real_cost}, {self.date_created}"
+        return f"id:{self.id}, {self.vehicle_type}, {self.real_cost}, {self.date_created}"
 
 
 class VehicleType(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.id}, {self.name}"
 
 class VehicleSize(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.id}, {self.name}"
     
 
 class Rental(models.Model):
     rental_date = models.DateField()
     return_date = models.DateField(null=True, blank=True)
     customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
-    vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
+    vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE, related_name="rentals")
     
     def __str__(self):
         return f"{self.customer}, {self.vehicle}, {self.rental_date}, {self.return_date}"
@@ -79,6 +81,7 @@ class VehicleAtRentalStation(models.Model):
     arrival_date = models.DateField()
     departure_date = models.DateField(null=True, blank=True)
     vehicle = models.ForeignKey('Vehicle', on_delete=models.CASCADE)
+    rental_station = models.ForeignKey('RentalStation', on_delete=models.CASCADE) #############
 
     def __str__(self):
         return f"{self.vehicle}, {self.arrival_date}, {self.departure_date}"

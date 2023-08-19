@@ -16,12 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+# from rent.views import RentalList, RentalDetail, CustomerList, CustomerAdd, VehicleList, VehicleDetail, VehicleAdd, RentalStationList, RentalStationAdd, RentalStationDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('api-auth/', include('rest_framework.urls') ),
-    
-    path('rent/rental', RentalAPIView.as_view(), name='rental-operations'),
-    path('rent/rental', RentalAPIView.as_view(), name='rental-operations'),
-    
+    path('rent/', include('rent.urls')),
 ]
