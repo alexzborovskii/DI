@@ -10,7 +10,7 @@ function myMove() {
             animate.style.left = position + "px";
         } else {
             clearInterval(intervalId);
-            setTimeout(() => { animate.style.left = 0 + "px"; }, 500);
+            setTimeout(() => { position = 0; animate.style.left = position + "px"; }, 500);
         }
     }, 1)
 }
