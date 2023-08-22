@@ -166,31 +166,25 @@
 
 // console.log(makeJuice("first", "second", "third"));
 
-// // // Part II
-function makeJuice(size){
-    let ingredients = [];
+// // // // Part II
+// function makeJuice(size) {
+//     let ingredients = [];
 
-    function addIngredients(firstIngridient, secondIngridient, thirdIngridient) {
-        console.log(ingredients);
-        ingredients.push(firstIngridient);
-        console.log(ingredients);
-        ingredients.push(secondIngridient);
-        console.log(ingredients);
-        ingredients.push(thirdIngridient);
-        console.log(ingredients);
-    }
-    function displayJuice(ingredients) {
-        const p = document.createElement("p");
-        const body = document.querySelector("body");
-        let afterFirstIngr = '';
-        for (ingr of ingredients.slice(1, ingredients.length)) {
-            afterFirstIngr += `, ${ingr}`;
-        }
-        p.innerText =  `The client wants a ${size} juice, containing ${ingredients[0]}${afterFirstIngr}`;
-        body.append(p)
-       
-    }
-    return  addIngredients("first", "second", "third"), addIngredients("fourth", "fifth", "sixth"), displayJuice(ingredients);
-}
+//     function addIngredients(firstIngridient, secondIngridient, thirdIngridient) {
+//         ingredients.push(firstIngridient, secondIngridient, thirdIngridient);
+//     }
+//     function displayJuice(ingredients) {
+//         const p = document.createElement("p");
+//         const body = document.querySelector("body");
+//         let afterFirstIngr = '';
+//         for (ingr of ingredients.slice(1, ingredients.length)) {
+//             afterFirstIngr += `, ${ingr}`;
+//         }
+//         p.innerText = `The client wants a ${size} juice, containing ${ingredients[0]}${afterFirstIngr}`;
+//         body.append(p)
 
-console.log(makeJuice("medium"));
+//     }
+//     return addIngredients("first", "second", "third"), addIngredients("fourth", "fifth", "sixth"), displayJuice(ingredients);
+// }
+
+// console.log(makeJuice("medium"));
