@@ -8,12 +8,12 @@ const inventory1 = [
     { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
   ];
 
-//1
-const getCarHonda = (carInventory) => {
-    const found = carInventory.find((element) => element.car_make === "Honda");
-    return `This is a ${found.car_make} ${found.car_model} from ${found.car_year}`;
-}
-console.log(getCarHonda(inventory1));
+// //1
+// const getCarHonda = (carInventory) => {
+//     const found = carInventory.find((element) => element.car_make === "Honda");
+//     return `This is a ${found.car_make} ${found.car_model} from ${found.car_year}`;
+// }
+// console.log(getCarHonda(inventory1));
 
 
 /* Part II */
@@ -26,9 +26,8 @@ const inventory2 = [
     { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
   ];
 
-console.log(inventory2);
-const sortCarInventoryByYear = function(carInventory) {
-    carInventory.sort((x, y) => x.car_year - y.car_year);
-}
-sortCarInventoryByYear(inventory2)
-console.log(inventory2)
+// const sortCarInventoryByYear = function(carInventory) {
+//     carInventory.sort((x, y) => x.car_year - y.car_year);
+// }
+// sortCarInventoryByYear(inventory2)
+// console.log(inventory2)
