@@ -77,7 +77,6 @@ const searchInput = document.getElementById("search_input");
 
 const searchResult = () => {
     console.log(searchInput.value);
-    // console.log("innerHTML; " + contentBox.innerHTML);
     filterRobots(searchInput.value);
 }
 
@@ -122,7 +121,6 @@ const emptyCheck = (filteredRobots) => {
     }
 }
 
-
-
+/* Running */
 displayAll();
 searchInput.addEventListener('input', searchResult);
