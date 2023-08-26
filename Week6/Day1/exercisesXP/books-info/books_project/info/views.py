@@ -1,16 +1,20 @@
+from django.forms import model_to_dict
 from django.shortcuts import render
 
 from django.http import HttpResponse, JsonResponse
 from .models import Book, BookReview
-import requests
 
 
 def list_books(request):
-    books_list = Book.objects.all()
-    content = ", ".join(books_list)
-    return JsonResponse({"books": content})
+    all_books = Book.objects.all()
+    books_dict = [model_to_dict(book) for book in all_books] 
+    return JsonResponse(books_dict, safe=False)
+
 
 def book_detail(request, book_id:int):
     book = Book.objects.get(id=book_id)
-    return JsonResponse({"title": book.title, "author": book.author, "published_date": book.published_date, "description": book.description})
+    book_dict = model_to_dict(book)
+    return JsonResponse(book_dict)
+
+
 
