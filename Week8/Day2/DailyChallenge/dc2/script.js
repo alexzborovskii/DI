@@ -7,9 +7,6 @@ butt.addEventListener('click', display);
 
 function display(event) {
     event.preventDefault();
-
-    console.log(nameInp.value);
-    console.log(lNameInp.value);
     const myObj = { "name": nameInp.value, "lastname": lNameInp.value }
     const myJSONString = JSON.stringify(myObj)
     const p = document.createElement("p");
