@@ -6,8 +6,7 @@
 // // // FIRST WAY
 
 
-// // const btn = document.querySelector("#btn");
-// // btn.addEventListener("click", getData)
+
 
 // // function getData () {
 // //     fetch("https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My")
