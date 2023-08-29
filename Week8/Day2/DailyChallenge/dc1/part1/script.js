@@ -19,7 +19,8 @@ function sortWords(arr) {
     const newPromise = new Promise ((resolve, reject) => {
         if (arr.length > 4) {
             // console.log(arr.sort());
-            resolve(arr.sort())
+            let arr2 = [...arr]
+            resolve(arr2.sort())
         } else {
             reject("Arr length is less then 5")
         }
