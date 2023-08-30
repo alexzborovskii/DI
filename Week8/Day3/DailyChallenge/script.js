@@ -8,7 +8,7 @@ delAllBtn.addEventListener("click", () => { ulElement.textContent = "" })
 async function getData() {
     try {
         let userInput = input.value;
-        let apiUrl = `https://api.giphy.com/v1/gifs/random?tag=${userInput}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`
+        let apiUrl = `https://api.giphy.com/v1/gifs/random?tag=${userInput}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error("problem with fetch")
