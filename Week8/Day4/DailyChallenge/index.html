@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="root-box">
+        <div id="first-currency-box">
+            <label for="first-select">Choose your currency:</label>
+            <select name="first-select" id="first-select"></select>
+        </div>
+        <div id="second-currency-box">
+            <label for="second-select">Choose target currency:</label>
+            <select name="second-select" id="second-select"></select>
+        </div>
+        <label for="first-amount">How much money to convert:</label>
+        <input id="first-amount" type="number" min="0">
+        <button id="btn">Convert</button>
+        <p> Target value is: <br><span  id="result"></span></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
