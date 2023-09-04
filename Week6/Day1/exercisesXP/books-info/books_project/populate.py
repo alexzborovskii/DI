@@ -36,3 +36,5 @@ for item in data['items']:
         categories=', '.join(book_data.get('categories', [])),
         thumbnail_url=book_data['imageLinks']['thumbnail'] if 'imageLinks' in book_data else ''
     )
+    
+    

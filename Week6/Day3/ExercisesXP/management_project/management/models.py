@@ -23,7 +23,7 @@ from django.contrib.auth.models import User
 
         
 class Department(models.Model):
-    
+
     name = models.CharField(max_length=50)
     description = models.TextField()
     
