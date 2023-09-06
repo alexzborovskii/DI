@@ -69,7 +69,7 @@ submit.addEventListener("click", (e) => {
   .then((resp) => {
     let respdiv = document.createElement("pre");
     respdiv.innerHTML = JSON.stringify(resp, null, 2);
-    form.replaceWith(respdiv);
+    body.append(respdiv);
     console.log("resp from server ", resp);
   })
   .catch((error) => {

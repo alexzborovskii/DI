@@ -3,18 +3,18 @@ const lodash = require("lodash");
 // const restify = require("restify");
 const dotenv = require("dotenv");
 const { emojis } = require("./emojis.js");
-// const cors = require("cors");
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
-// app.use(cors({origin: 'http://127.0.0.1:5501'}));
-// app.use(
-//   function crossOrigin(req,res,next){
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//     return next();
-//   }
-// );
+app.use(cors({origin: 'http://127.0.0.1:5501'}));
+app.use(
+  function crossOrigin(req,res,next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    return next();
+  }
+);
 
 // app.use(function (req, res, next) {
 //   res.setHeader("Access-Control-Allow-Origin", "*");
