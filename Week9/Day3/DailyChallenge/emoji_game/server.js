@@ -1,28 +1,14 @@
 const express = require("express");
 const lodash = require("lodash");
-// const restify = require("restify");
 const dotenv = require("dotenv");
 const { emojis } = require("./emojis.js");
 const cors = require("cors");
 
+
 dotenv.config();
 const app = express();
-app.use(cors({origin: 'http://127.0.0.1:5501'}));
-app.use(
-  function crossOrigin(req,res,next){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    return next();
-  }
-);
 
-// app.use(function (req, res, next) {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-//   res.setHeader("Access-Control-Allow-Credentials", true);
-//   next();
-// });
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -49,18 +35,21 @@ function getAnswers(arr) {
 
 app.get("/api/game/", (req, res) => {
   const answers = getAnswers(emojis);
-  console.log(answers)
+  // console.log(answers)
   res.json(answers);
 });
 
 app.post("/api/answer/", (req, res) => {
   const { answer, task } = req.body;
+  console.log("task: ", task);
+  console.log("answer: ", answer);
   const corrAnswer = emojis.find((element) => element.emoji == task);
+  console.log("corrAnswer: ", corrAnswer)
   if (corrAnswer["name"] == answer) {
     gameState.score++;
     res.json({ message: "Correct guess!", score: gameState.score });
   } else {
-    res.json({ message: "Incorrect guess.", score: gameState.score });
+    res.json({ message: `Incorrect guess. Correct is ${corrAnswer["name"]}`, score: gameState.score });
   }
 });
 
