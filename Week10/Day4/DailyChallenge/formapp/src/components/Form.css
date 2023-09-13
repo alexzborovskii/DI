@@ -1,0 +1,13 @@
+input[type=text] {
+    display: block;
+    margin: 5px;
+}
+
+#form-root{
+    background-color: aquamarine;
+}
+
+#form{
+    margin: 20px;
+    padding: 20px;
+}
