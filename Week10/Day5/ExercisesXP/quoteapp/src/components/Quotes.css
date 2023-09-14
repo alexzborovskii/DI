@@ -1,0 +1,50 @@
+.root-box {
+    /* background-color: #282c34; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    transition: all 1s ease;
+  }
+
+.quote-box{
+    width: 60vw;
+    min-width: 400px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.quote{
+    align-self: center;
+    text-align: center;
+    margin: 20px;
+    transition: all 1s ease;
+
+}
+
+.author {
+    align-self: flex-end;
+    margin: 20px;
+    transition: all 1s ease;
+
+}
+
+button{
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 20px;
+    margin-left: auto;
+    border-radius: 5px;
+    transition: all 1s ease;
+width: 50px;
+
+}
