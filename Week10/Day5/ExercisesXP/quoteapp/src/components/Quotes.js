@@ -43,7 +43,7 @@ const Quotes = (props) => {
                     </p>
                 )}
                 <button onClick={getQuote} style={{ background: color }}>
-                    Search
+                    New quote
                 </button>
             </div>
         </div>
