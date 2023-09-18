@@ -36,20 +36,24 @@ const Game = () => {
     };
 
     const playGame = (id) => {
-        let changedHeroes = [...heroes];
+        // let changedHeroes = [...heroes];
+        let changedHeroes = JSON.parse(JSON.stringify(heroes));
         const clickedHero = changedHeroes.find((item) => item.id === id);
         console.log("clickedHero=>", clickedHero);
         if (clickedHero.clicked) {
             score > record ? setRecord(score) : setRecord(record);
             setScore(0);
 
-            //recovering clicked property
-            let startHeroes = [...heroes];
-            for (let hero of startHeroes) {
-                hero.clicked = false;
-            }
+            allHeroes();
 
-            setHeroes(shuffle(startHeroes));
+            // // recovering clicked property
+            // let startHeroes = [...heroes];
+            // for (let hero of startHeroes) {
+            //     hero.clicked = false;
+            // }
+            
+            // setHeroes(shuffle(startHeroes));
+
         } else {
             clickedHero.clicked = true;
             changedHeroes = shuffle(changedHeroes);
