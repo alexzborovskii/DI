@@ -3,7 +3,7 @@ import React from "react"
 import BuggyCounterF from './components/BuggyCounterF';
 import BuggyCounter from './components/BuggyCounter';
 import ErrorBound from './components/ErrorBoundary ';
-
+import Color from './components/Color';
 
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
       <ErrorBound>
         <BuggyCounter/>
       </ErrorBound>
+      <Color />
+
     </div>
   );
 }
