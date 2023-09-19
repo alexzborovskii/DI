@@ -38,12 +38,6 @@
 }
 
 
-.App.dark {
-  background-color: black;
-  color: white;
-}
-
-.App.light {
-  background-color: white;
-  color: black;
+.completed{
+  background-color: lightgreen;
 }
