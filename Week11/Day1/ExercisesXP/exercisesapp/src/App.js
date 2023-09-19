@@ -36,21 +36,19 @@ function App() {
     };
 
     return (
-        /* EXERCISE 1 */
+        //  /* EXERCISE 1 */
         <BrowserRouter>
             <NavbarComp />
-            <ErrorBoundary>
                 <Routes>
-                    <Route exact path="/" element={<HomeScreen />} />
-                    <Route exact path="/profile" element={<ProfileScreen />} />
-                    <Route exact path="/shop" element={<ShopScreen />} />
+                    <Route exact path="/"  element={<ErrorBoundary><HomeScreen key={1}/></ErrorBoundary>} />
+                    <Route exact path="/profile" element={<ErrorBoundary><ProfileScreen key={2} /></ErrorBoundary>} />
+                    <Route exact path="/shop" element={<ErrorBoundary><ShopScreen key={3}/></ErrorBoundary>} />
                 </Routes>
-            </ErrorBoundary>
+            /* EXERCISE 4 */
             <h2>EXERCISE 4</h2>
             <button onClick={getData}>Fetch</button>
         </BrowserRouter>
 
-        /* EXERCISE 4 */
     );
 }
 
