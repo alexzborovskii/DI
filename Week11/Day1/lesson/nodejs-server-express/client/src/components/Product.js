@@ -1,5 +1,6 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate, } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import {AppContext} from "../App.js"
 //
 const Product = (props) => {
   const [product, setProduct] = useState([]);
@@ -7,9 +8,10 @@ const Product = (props) => {
   const [price, setPrice] = useState("");
   const param = useParams();
   const navigate = useNavigate()
+  const {token} = useContext(AppContext)
   //
   console.log("param=>", param);
-
+  
   useEffect(() => {
     getProductInfo();
   }, []);
@@ -74,7 +76,8 @@ const Product = (props) => {
         <h2>Delete Product</h2>
         <button onClick={del}>Delete</button>
       </div>
-      {product.map((item) => {
+      {console.log("Product: ", product)}
+      {product && product.map((item) => {
         return (
           <div key={item.id}>
             <h2>{item.name}</h2>

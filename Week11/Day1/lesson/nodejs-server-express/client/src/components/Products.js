@@ -1,26 +1,29 @@
-import { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
+import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import {AppContext} from "../App.js"
+import axios from 'axios'
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Products = (props) => {
     //
     const [products, setProducts] = useState();
     const [search, setSearch] = useState();
-    // const [newProduct, setNewProduct] = useState({});
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-
+    const { token } = useContext(AppContext);
     //
     useEffect(() => {
+        console.log("shop=>", token);
         allProducts();
     }, []);
     //
     const allProducts = async () => {
         try {
-            const res = await fetch(`/api/products`);
+            const res = await fetch("/api/products");
+            if(res.status!==200) return;
             const data = await res.json();
-            // console.log("data=>", data)
             setProducts(data);
         } catch (e) {
             console.log(e);
@@ -29,8 +32,8 @@ const Products = (props) => {
 
     const handleSearch = async () => {
         try {
-            const res = await fetch(
-                `${BASE_URL}/api/products/search?name=${search}`
+            const res = await axios.get(
+                `/api/products/search?name=${search}`
             );
             const data = await res.json();
             console.log("data: ", data);
@@ -49,10 +52,10 @@ const Products = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({name, price})
+                body: JSON.stringify({ name, price }),
             });
             const data = await res.json();
-            console.log("data:", data)
+            console.log("data:", data);
             // allProducts()
             setProducts(data);
         } catch (error) {

@@ -4,7 +4,7 @@ const _getAllProducts = () => {
     return db("products").select("id", "name", "price").orderBy("name");
 };
 
-const _getProduct = (id) => {
+const _getProductById = (id) => {
     // const id = req.params.id;
     return db("products").select("id", "name", "price").where({ id });
 };
@@ -34,4 +34,4 @@ const _deleteProduct = (id) => {
     .returning()
 }
 
-module.exports = { _getAllProducts, _getProduct, _searchProduct, _insertProduct, _updateProduct, _deleteProduct };
+module.exports = { _getAllProducts, _getProductById, _searchProduct, _insertProduct, _updateProduct, _deleteProduct };

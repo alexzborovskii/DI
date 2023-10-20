@@ -10,10 +10,14 @@ const {
   deleteProduct,
 } = require("../controllers/products.controller.js");
 
+const {verifyToken} = require('../middlewares/verify.token.js');
+
+
 const p_router = express.Router();
 
 // CRUD - Read - get all products
 p_router.get("/", getAllProducts);
+// p_router.get("/", verifyToken, getAllProducts);
 
 // CRUD - Read - get all products
 p_router.get("/search", searchProduct);
